@@ -1,0 +1,32 @@
+.img {
+    width: 500px;
+
+}
+
+.cavalo-marinho{
+    color: blue;
+}
+
+.paragrafos {
+    background-color: rgb(240, 240, 240);
+    width: 80%;
+    height: 300px;
+    overflow: auto;
+    position: absolute;
+    top: 200px;
+}
+#praia {
+    width: 450px;
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    z-index: 1;
+}
+
+#home {
+    width: 250px;
+    position: absolute;
+    top: 140px;
+    left: 120px;
+    z-index: 2;
+}
