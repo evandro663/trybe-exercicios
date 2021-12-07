@@ -42,6 +42,11 @@
       </section>
     </main>
     <script>
+      function alteraTexto(newText, tag) {
+        let text = document.getElementsByTagName(tag)[1];
+        text.innerText = newText;   
+      }
+      alteraTexto('Me vejo bem loco ganhando 3.5k xD', 'p');
         /*
         Aqui você vai modificar os elementos já existentes utilizando apenas as funções:
         - document.getElementById()
