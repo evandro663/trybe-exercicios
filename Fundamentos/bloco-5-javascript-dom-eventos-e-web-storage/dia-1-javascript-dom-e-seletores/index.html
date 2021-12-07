@@ -72,6 +72,13 @@
       }
       alteraTextoMai('p');
 
+      function showTag() {
+        let showText = document.getElementsByTagName('p')
+        for (let index = 0; index < showText.length; index += 1) {
+          console.log(showText[index].innerText);   
+        }
+      }
+      showTag();
 
 
         /*
@@ -83,7 +90,7 @@
  Crie uma função que mude a cor do quadrado amarelo para o verde da Trybe (rgb(76,164,109)). -- ok
  Crie uma função que mude a cor do quadrado vermelho para branco. -- ok
  Crie uma função que corrija o texto da tag <h1>. -- ok
- Crie uma função que modifique todo o texto da tag <p> para maiúsculo.
+ Crie uma função que modifique todo o texto da tag <p> para maiúsculo. -- ok
  Crie uma função que exiba o conteúdo de todas as tags <p> no console.
         */
     </script>
