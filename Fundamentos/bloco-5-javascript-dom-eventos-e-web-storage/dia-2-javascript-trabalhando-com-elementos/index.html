@@ -57,16 +57,80 @@
   </head>
   <body>
     <script>
-      let bodyC = document.getElementsByTagName('body');
-      
-      let newElement = document.createElement('h1');
 
-      newElement.innerHTML = 'Exercício 5.2 - JavaScript DOM';
-      console.log(newElement);
-
+      const bodyC = document.body      
+      const newElement = document.createElement('h1');
+      newElement.innerText = 'Exercício 5.2 - JavaScript DOM';
       bodyC.appendChild(newElement);
 
+      const newElementMain = document.createElement('main');
+      newElementMain.className ='main-content';
+      bodyC.appendChild(newElementMain);
+
+      const newElementSection = document.createElement('section');
+      newElementSection.className = ('center-content');
+      newElementMain.appendChild(newElementSection);
+
+      const newElementP = document.createElement('p')
+      newElementP.innerText = 'Algum texto.';
+      newElementSection.appendChild(newElementP);
       
+      const newElementSectionLeft = document.createElement('section');
+      newElementSectionLeft.className = 'left-content'
+      newElementMain.appendChild(newElementSectionLeft);
+
+      const newElementSectionRight = document.createElement('section');
+      newElementSectionRight.className = 'right-content'
+      newElementMain.appendChild(newElementSectionRight);
+
+      const newElementImg = document.createElement('img');
+      newElementImg.src = 'https://picsum.photos/200';
+      newElementImg.className = 'small-image';
+      newElementSectionLeft.appendChild(newElementImg);
+
+      const newElementUl = document.createElement('ul');
+      newElementSectionRight.appendChild(newElementUl);
+      const myArray = ['Um', 'Dois', 'Três', 'Quatro', 'Cinco', 'Seis',
+        'Sete', 'Oito', 'Nove', 'Dez'] 
+      for (let i in myArray) {
+        const newElementLi = document.createElement('li');
+        newElementLi.innerHTML = myArray[i];
+        newElementUl.appendChild(newElementLi);
+      }
+      
+      for (let index = 1; index <= 3; index += 1) {
+        const newElementH3 = document.createElement('h3');
+        newElementH3.innerHTML = 'lul' + index;
+        newElementMain.appendChild(newElementH3);
+      }
+      
+      // PT 2
+      //Adicione a classe title na tag h1 criada;
+      let altClasse = document.querySelector('h1')
+      altClasse.className = 'title';
+
+      //Adicione a classe description nas 3 tags h3 criadas;
+      const elementsH3 = document.getElementsByTagName('h3');
+      for (let index = 0; index < 3; index +=1) {
+        elementsH3[index].className = 'description';
+      }
+
+      //Remova a section criado no passo 5 (aquele que possui a classe 
+      //left-content ). Utilize a função .removeChild() ;
+      const sectionLeft = document.getElementsByClassName('left-content')[0];
+      newElementMain.removeChild(sectionLeft);
+
+      //Centralize a `section` criado no passo 6 (aquele que possui a classe `right-content`). Dica: para centralizar, basta configurar o `margin-right: auto` da `section`;
+      const sectionRight = document.getElementsByClassName('right-content')[0];
+      sectionRight.style.marginRight='auto';
+
+      //Troque a cor de fundo do elemento pai da section criada no passo 3 (aquela que possui a classe center-content ) para a cor verde;
+      const sectionCenter = document.getElementsByClassName('center-content')[0];
+      sectionCenter.parentNode.style.backgroundColor = 'green';
+
+      //Remova os dois últimos elementos ( nove e dez ) da lista criada no passo 8
+      ul.lastChild.remove();
+      ul.lastChild.remove();
     </script>
   </body>
 </html>
